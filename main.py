@@ -57,14 +57,25 @@ def simulate_action(num_dice, threshold, drive, rolls, target, num_simulations):
 
     return probability, average_successes
 
-# Example usage:
-num_dice = 2       # Number of dice rolled per roll
-threshold = 6      # Minimum roll value to succeed
-drive = 1.5        # Multiplier for successes
-rolls = 4          # Number of rolls in one action
-target = 16        # Minimum successes needed
-num_simulations = 10000  # Number of simulations
+def main():
+    print("Welcome to the Dice-Based Probability Simulator!")
+    
+    # User inputs
+    num_dice = int(input("Enter the number of dice rolled per roll: "))
+    threshold = int(input("Enter the threshold for a success (1-10): "))
+    drive = float(input("Enter the drive multiplier for successes: "))
+    rolls = int(input("Enter the number of rolls in one action: "))
+    target = int(input("Enter the target number of successes: "))
+    num_simulations = int(input("Enter the number of simulations to perform: "))
+    
+    print("\nSimulating...\n")
+    
+    # Perform simulation
+    probability, average_successes = simulate_action(num_dice, threshold, drive, rolls, target, num_simulations)
+    
+    # Results
+    print(f"Probability of success: {probability:.2f}%")
+    print(f"Average number of successes: {average_successes:.2f}")
 
-probability, average_successes = simulate_action(num_dice, threshold, drive, rolls, target, num_simulations)
-print(f"Probability of success: {probability:.2f}%")
-print(f"Average number of successes: {average_successes:.2f}")
+if __name__ == "__main__":
+    main()

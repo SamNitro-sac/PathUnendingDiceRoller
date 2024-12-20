@@ -35,19 +35,32 @@ This program simulates dice rolls and calculates the probability of achieving a 
    python dice_simulator.py
    ```
 
-3. Edit the parameters in the script to suit your needs (e.g., number of dice, threshold, drive multiplier, rolls, target, and simulations).
+3. Follow the on-screen prompts to enter the simulation parameters. For example:
+   ```
+   Enter the number of dice rolled per roll: 4
+   Enter the threshold for a success (1-10): 6
+   Enter the drive multiplier for successes: 1.5
+   Enter the number of rolls in one action: 8
+   Enter the target number of successes: 16
+   Enter the number of simulations to perform: 10000
+   ```
+
+4. The program will calculate and display:
+   - The probability of achieving the target.
+   - The average number of successes across all simulations.
 
 ---
 
 ## Example
 
-```python
-num_dice = 4       # Number of dice rolled per roll
-threshold = 6      # Minimum roll value to succeed
-drive = 1.5        # Multiplier for successes
-rolls = 8          # Number of rolls in one action
-target = 16        # Minimum successes needed
-num_simulations = 10000  # Number of simulations
+Interactive input example:
+```
+Enter the number of dice rolled per roll: 4
+Enter the threshold for a success (1-10): 6
+Enter the drive multiplier for successes: 1.5
+Enter the number of rolls in one action: 8
+Enter the target number of successes: 16
+Enter the number of simulations to perform: 10000
 ```
 
 Output:
