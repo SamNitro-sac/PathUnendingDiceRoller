@@ -13,6 +13,10 @@ This program simulates dice rolls and calculates the probability of achieving a 
 - Supports actions with multiple rolls and calculates:
   - Probability of achieving or exceeding a target number of successes.
   - Average number of successes per action.
+- **Interactive GUI** with themed design inspired by tabletop RPGs.
+- Plays sounds based on the probability of success:
+  - A "Nelson ha-ha" sound for probabilities below 50%.
+  - A "Yes!" sound for probabilities 50% or higher.
 
 ---
 
@@ -20,7 +24,11 @@ This program simulates dice rolls and calculates the probability of achieving a 
 
 ### Requirements
 - Python 3.x
-- No additional libraries are required (uses Python's built-in modules).
+- The following Python libraries:
+  - `pygame` for playing sounds. Install it using:
+    ```bash
+    pip install pygame
+    ```
 
 ### Running the Program
 
@@ -30,44 +38,50 @@ This program simulates dice rolls and calculates the probability of achieving a 
    cd dice-simulator
    ```
 
-2. Run the program:
+2. Ensure you have Python 3.x installed. If not, download and install it from [python.org](https://www.python.org/).
+
+3. Install the required library:
+   ```bash
+   pip install pygame
+   ```
+
+4. Run the program:
    ```bash
    python dice_simulator.py
    ```
 
-3. Follow the on-screen prompts to enter the simulation parameters. For example:
-   ```
-   Enter the number of dice rolled per roll: 4
-   Enter the threshold for a success (1-10): 6
-   Enter the drive multiplier for successes: 1.5
-   Enter the number of rolls in one action: 8
-   Enter the target number of successes: 16
-   Enter the number of simulations to perform: 10000
-   ```
+5. Use the graphical interface to enter your parameters:
+   - **Number of Dice**: The number of dice rolled per roll.
+   - **Threshold**: Minimum roll value to count as a success (1-10).
+   - **Drive Multiplier**: Multiplier applied to total successes.
+   - **Number of Rolls**: Number of rolls in one action.
+   - **Target Successes**: Minimum successes needed to succeed.
+   - **Number of Simulations**: Total number of simulations to perform (default: 10000).
 
-4. The program will calculate and display:
-   - The probability of achieving the target.
-   - The average number of successes across all simulations.
+6. Click "Run Simulation" to see the results displayed in the GUI. Depending on the probability:
+   - If the probability is below 50%, you will hear the "Nelson ha-ha" sound.
+   - If the probability is 50% or higher, you will hear the "Yes!" sound.
 
 ---
 
 ## Example
 
-Interactive input example:
-```
-Enter the number of dice rolled per roll: 4
-Enter the threshold for a success (1-10): 6
-Enter the drive multiplier for successes: 1.5
-Enter the number of rolls in one action: 8
-Enter the target number of successes: 16
-Enter the number of simulations to perform: 10000
-```
+Interactive input example in the GUI:
+- Enter the following parameters:
+  - **Number of Dice:** 4
+  - **Threshold:** 6
+  - **Drive Multiplier:** 1.5
+  - **Number of Rolls:** 8
+  - **Target Successes:** 16
+  - **Number of Simulations:** 10000
 
-Output:
+Output displayed in the GUI:
 ```
 Probability of success: 78.52%
 Average number of successes: 18.34
 ```
+
+If the probability is below 50%, you will hear a "ha-ha" sound. Otherwise, you will hear "Yes!".
 
 ---
 
@@ -96,6 +110,12 @@ Returns:
 - `probability`: Probability of achieving the target (percentage).
 - `average_successes`: Average number of successes per action.
 
+### `play_sound(file)`
+Plays a sound file using `pygame`.
+
+Arguments:
+- `file`: Path to the sound file to play.
+
 ---
 
 ## Contributing
@@ -110,4 +130,5 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Acknowledgments
 - Inspired by mechanics from tabletop RPGs and custom dice systems.
+- Sounds are inspired by common pop culture references.
 
